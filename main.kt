@@ -15,7 +15,8 @@ fun main()
     //check 'A'
     check_a(random_numbers)
 
-    //count the 
+    //count the number
+    
 }
 
 fun check_repeat(number:Int)
