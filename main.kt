@@ -33,7 +33,7 @@ fun check_b(number:List<Int>,your_number:List<Int>)
 
 }
 
-fun check_a(number:List<Int>,your_number:List<Int>)
+fun check_a(number:List<Int>,your_number:List<Int>):Int
 {
     //answer = 9527 , your_answer = 9510 , you got 2A
     var count:Int = 0
