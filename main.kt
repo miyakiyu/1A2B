@@ -16,34 +16,32 @@ fun main()
     your_answer.add(input)    
 
 
-    //check your answer for measure "B"
-    check_b(none_repeat_number,your_answer)
-
-
-    //check your answer for measure "A" and print it out
-    println(check_a(none_repeat_number,your_answer))
-    
-
+    //check your answer for measure "A" and "B" and print it out
+    check_ab(none_repeat_number,your_answer)
+    val (count_a,count_b) = check_ab(none_repeat_number,your_answer)
+    println("You got ${count_a}A ${count_b}B")
 
 }
 
-fun check_b(number:List<Int>,your_number:List<Int>)
+fun check_ab(number:List<Int>,your_number:List<Int>):Pair<Int,Int>
 {
-    //answer = 9527 , your_answer = 1234 , you got 1B
+    var count_a:Int = 0
+    var count_b:Int = 0
 
-}
-
-fun check_a(number:List<Int>,your_number:List<Int>):Int
-{
-    //answer = 9527 , your_answer = 9510 , you got 2A
-    var count:Int = 0
-    for(i in number)
+    for(i in number.indices)
     {
-        if(number[i]==your_number[i])
+        for(j in number.indices)
         {
-            count+=1
+            if(i ==j && number[i]==your_number[j])
+            {
+                count_a+=1
+            }
+            else if(number[i]==your_number[j])
+            {
+                count_b+=1
+            }
         }
     }
 
-    return count
+    return Pair(count_a,count_b)
 }
