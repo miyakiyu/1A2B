@@ -10,14 +10,13 @@ fun main()
     //get answer and store it to a List<Int> type
     println("Enter your answer:")
     val read = Scanner(System.`in`)
-    val your_answer:List<Int> = mutableListOf()
-
-    val input = readLine()
+    val your_answer:MutableList<Int> = mutableListOf()
+    val input = readLine()!!.toInt()
     your_answer.add(input)    
 
 
     //check your answer for measure "A" and "B" and print it out
-    check_ab(none_repeat_number,your_answer)
+    //check_ab(none_repeat_number,your_answer)
     val (count_a,count_b) = check_ab(none_repeat_number,your_answer)
     println("You got ${count_a}A ${count_b}B")
 
