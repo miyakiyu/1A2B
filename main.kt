@@ -7,20 +7,42 @@ fun main()
     val none_repeat_number = random_numbers.shuffled().take(4)
     println("The number is ready! Let's have fun!(｢･ω ･)｢")
 
-    //get answer and store it to a List<Int> type
-    println("Enter your answer:")
-    val input = readLine()!!.split(" ") //your input
-    val your_answer:MutableList<String> = mutableListOf() //create a list to store your input
-    input.forEach() //put it inside the list
+    //counting your plat times
+    var count_num:Int = 0
+
+    //count your play times,if smaller than 5 times, you can continue
+    while(count_num < 5)
     {
-        your_answer.add(it)
+        //get answer and store it to a List<Int> type
+        println("Enter your answer:")
+        val input = readLine()!!.split(" ") //your input
+        val your_answer:MutableList<String> = mutableListOf() //create a list to store your input
+        input.forEach() //put it inside the list
+        {
+            your_answer.add(it)
+        }
+
+        /* TEST BLOCK!!!
+        println(none_repeat_number)
+        println(your_answer)
+        */
+
+
+        //check your answer for measure "A" and "B" and print it out
+        val (count_a,count_b) = check_ab(none_repeat_number,your_answer)
+        println("You got ${count_a}A ${count_b}B")
+        if(count_a == 4)
+        {
+            println("YOU WIN !!! (b･w ･)b")
+            break
+        }
+        count_num+=1
     }
-
-
-    //check your answer for measure "A" and "B" and print it out
-    val (count_a,count_b) = check_ab(none_repeat_number,your_answer)
-    println("You got ${count_a}A ${count_b}B")
-
+    if(count_num == 5)
+    {
+        println("GAME OVER !!! (｢-ω -)｢")
+        println("The correct answer is:${none_repeat_number}")
+    }
 }
 
 fun check_ab(number:List<String>,your_number:List<String>):Pair<Int,Int>
