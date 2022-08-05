@@ -11,7 +11,7 @@ fun main()
     var count_num:Int = 0
 
     //count your play times,if smaller than 5 times, you can continue
-    while(count_num < 5)
+    while(count_num < 10)
     {
         //get answer and store it to a List<Int> type
         println("Enter your answer:")
@@ -38,7 +38,7 @@ fun main()
         }
         count_num+=1
     }
-    if(count_num == 5)
+    if(count_num == 10)
     {
         println("GAME OVER !!! (｢-ω -)｢")
         println("The correct answer is:${none_repeat_number}")
